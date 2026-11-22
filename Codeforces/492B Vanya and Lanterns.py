@@ -1,0 +1,14 @@
+n, l = map(int, input().split())
+
+a = []
+while len(a) < n:
+    a.extend(map(int, input().split()))
+
+a.sort()
+
+d = max(a[0], l - a[-1])
+
+for i in range(1, n):
+    d = max(d, (a[i] - a[i - 1]) / 2.0)
+
+print(f"{d:.10f}")
